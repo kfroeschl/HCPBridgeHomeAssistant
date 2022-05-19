@@ -1,5 +1,15 @@
+
+## Fork of [hkiam/HCPBridge](https://github.com/hkiam/HCPBridge)
+This fork is mainly for personal use and to Integrate it into my HomeAssistant installation
+
+Features To Base Implementation:
+- Works with MQTT
+- Provides HA MQTT Device Discovery
+- Enabled HTTPWebUpdater from MQTT libs protected with Same User/PW as from MQTT User/PW
+
 # HCPBridge
 Emuliert ein Hörmann HAP 1 HCP auf dem ESP8622 bzw. ESP32 und Arduino.<br/>
+
 
 **Kompatible Torantriebe (HCP2-Bus - Modbus):**
 - SupraMatic E/P Serie 4
