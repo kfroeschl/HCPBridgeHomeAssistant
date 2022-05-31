@@ -134,7 +134,7 @@ String translateState(int stateCode){
   case 64:
     return "closed";
   default:
-    return "stoped";
+    return "stopped";
   }
 }
 
