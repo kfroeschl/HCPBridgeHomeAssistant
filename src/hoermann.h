@@ -253,13 +253,13 @@ class HoermannGarageEngine{
      * Write on 0x9D31+1 , byte1: target, byte2: current
     */
     uint16_t onDoorPositonChanged( TRegister *reg, uint16_t val){
-        // on First Byte changed (target)
+        // on First Byte changed (current)
         if ((reg->value & 0x00FF) != ( val & 0x00FF)){
-            this->state->setTargetPosition((float)(val & 0x00FF)/200.0f);
+            this->state->setCurrentPosition((float)(val & 0x00FF)/200.0f);
         }
-        // on Second Byte changed (current)
+        // on Second Byte changed (target)
         if ((reg->value & 0xFF00) != ( val & 0xFF00)){
-            this->state->setCurrentPosition((float)((val & 0xFF00)>>8)/200.0f);
+            this->state->setTargetPosition((float)((val & 0xFF00)>>8)/200.0f);
         }
         return val;
     }

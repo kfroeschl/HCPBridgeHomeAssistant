@@ -61,10 +61,12 @@ void setupWebServer(){
   server.on("/command/ventilationPositionDoor", HTTP_POST, [] (AsyncWebServerRequest *request) { hoermannEngine->ventilationPositionDoor();request->send(202);});
   server.on("/command/toogleLight", HTTP_POST, [] (AsyncWebServerRequest *request) { hoermannEngine->toogleLight();request->send(202);});
   server.on("/command/turnLight", HTTP_POST, [] (AsyncWebServerRequest *request) { hoermannEngine->turnLight(request->hasParam("on"));request->send(202);});
-  
+
   server.onNotFound([](AsyncWebServerRequest *request){
     request->send(404, "text/plain", "Not found ;(");
   });
+
+  server.begin();
 }
 
 
@@ -82,6 +84,7 @@ void setup(){
   WiFi.onEvent(WiFiGotIP, WiFiEvent_t::ARDUINO_EVENT_WIFI_STA_GOT_IP);
   WiFi.onEvent(WiFiStationDisconnected, WiFiEvent_t::ARDUINO_EVENT_WIFI_STA_DISCONNECTED);
 
+  WiFi.setHostname("garagentor");
   WiFi.begin(ssid, password);
 
   setupWebServer();
