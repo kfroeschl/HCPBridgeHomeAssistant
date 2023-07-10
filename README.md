@@ -2,6 +2,10 @@
 ## Fork of [hkiam/HCPBridge](https://github.com/hkiam/HCPBridge)
 This fork is mainly for personal use and to Integrate it into my HomeAssistant installation
 
+## Archived in favoor of [Gifford47/HCPBridgeMqtt](https://github.com/Gifford47/HCPBridgeMqtt)
+# It made MQTT work (strict Thread/Core seperation of Modbus and MQTT/HTTP
+# It included the refactroing of this rewrite branch
+
 Features To Base Implementation:
 - Works with MQTT
 - Provides HA MQTT Device Discovery
